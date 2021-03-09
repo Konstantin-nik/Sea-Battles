@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="208px" height="216px" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient cx="1823.44370860927" cy="483.059602649008" r="335.304033714631" gradientTransform="matrix(0 1 -1 0 2306.50331125828 -1340.38410596026 )" gradientUnits="userSpaceOnUse" id="RadialGradient50">
+      <stop id="Stop51" stop-color="#1c608b" offset="0" />
+      <stop id="Stop52" stop-color="#0d1a3b" stop-opacity="0.996078431372549" offset="1" />
+    </radialGradient>
+    <filter x="1717px" y="402px" width="208px" height="216px" filterUnits="userSpaceOnUse" id="filter53">
+      <feOffset dx="0" dy="10" in="SourceAlpha" result="shadowOffsetInner" />
+      <feGaussianBlur stdDeviation="2.5" in="shadowOffsetInner" result="shadowGaussian" />
+      <feComposite in2="shadowGaussian" operator="atop" in="SourceAlpha" result="shadowComposite" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.349019607843137 0  " in="shadowComposite" />
+    </filter>
+    <g id="widget54">
+      <path d="M 1725 405  L 1917 405  L 1917 600  L 1725 600  L 1725 405  Z " fill-rule="nonzero" fill="url(#RadialGradient50)" stroke="none" />
+      <path d="M 1723.5 403.5  L 1918.5 403.5  L 1918.5 601.5  L 1723.5 601.5  L 1723.5 403.5  Z " stroke-width="3" stroke="#000000" fill="none" stroke-opacity="0.72156862745098" />
+    </g>
+  </defs>
+  <g transform="matrix(1 0 0 1 -1717 -402 )">
+    <use xlink:href="#widget54" filter="url(#filter53)" />
+    <use xlink:href="#widget54" />
+  </g>
+</svg>
