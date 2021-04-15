@@ -5,8 +5,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
-	
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 	<title>Sea Battles</title>
 </head>
 
@@ -17,8 +15,8 @@
 	</header>
 	<main>
 		<section id = "main_page">
-			<img class = "pressed-button" src="./assets/images/singleplayer.png" alt="singleplayer">
-			<img class = "pressed-button" src="./assets/images/multiplayer.png" alt="multiplayer">
+			<input type = "image" class="pressed-button-cube" src="./assets/images/singleplayer.png" alt="singleplayer"></input>
+			<input id="multi" type = "image" class="pressed-button-cube" src="./assets/images/multiplayer.png" alt="multiplayer"></input>
 		</section>
 
 		<section id = "settings">
@@ -32,10 +30,22 @@
 				<button type="button" class="pressed-button"><b>Interface</b></button>
 			</div>
 			<div class = "centralize">
-				<button type="button" class="pressed-button"><b>Control</b></button>
+				<button id = "back-settings" type="button" class="pressed-button"><b>Back</b></button>
 			</div>
+		</section>
+
+		<section id= "online-option">
+			<section class = "centralize">
+				<div class = "horizontal">
+					<button type="button" class="pressed-button-cube"><b>Hotseat</b></button>
+				</div>
+				<div class = "horizontal">
+					<button type="button" class="pressed-button-cube"><b>Online</b></button>
+				</div>
+			</section>
+
 			<div class = "centralize">
-				<button id = "back" type="button" class="pressed-button"><b>Back</b></button>
+				<button id = "back-multiplayer" type="button" class="pressed-button"><b>Back</b></button>
 			</div>
 		</section>
 
