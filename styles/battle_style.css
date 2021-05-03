@@ -13,6 +13,36 @@ html {
 	margin: 0 0 0 0;
 }
 
-.battlefield {
+.header__text__img {
+	outline: none;
+	position: absolute;
+	right: 1%;
+	top: 2%;
+	width: 80px;
+	height: auto;
+}
+
+.header__text__h1 {
+	font-size: 120px;
+	margin-top: 8%;
+	text-align: center;
+	color: #2e2761;
+}
+
+
+.battlefield img {
 	
+	width: 1000px;
+	height:auto;
+}
+.battlefield {
+	display: flex;
+	justify-content:left;
+}
+
+.battlefield li {
+	font-size: 56px;
+	margin-top: 12%;
+	text-align: center;
+	color: #2e2761;
 }
