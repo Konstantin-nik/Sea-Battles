@@ -4,29 +4,55 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./styles/battle_style.css">
+	<link rel="stylesheet" href="../styles/battle_style.css">
 	<title>Battle</title>
 </head>
 
 <body>
 	<header>
 		<h1 class="header__text__h1">Placement of Ships</h1>
-		<input type="image" class="header__text__img" src="./assets/images/settings.png" alt="settings"></input>
 	</header>
 
 	<main>
 		<div class="battlefield">
 			<img src="../assets/images/field_sea.png" alt="field_sea">
 			<ul>
-				<li><b>Random</b></li>
-				<li><b>By your self</b></li>
+				<li>
+					<button type="button" class="pressed-button"><b>Random</b></button>
+				</li>
+				<li>
+					<button id="loadShips" type="button" class="pressed-button"><b>By your self</b></button>
+				</li>
+				<ul id="ships">
+					<li>
+						<input class="ship" type="image" src="../assets/images/Ship4.png" alt="fourdeck">
+					</li>
+					<li>
+						<input class="ship" type="image" src="../assets/images/Ship3.png" alt="tripledeck">
+						<input class="ship" type="image" src="../assets/images/Ship3.png" alt="tripledeck">
+					</li>
+					<li>
+						<input class="ship" type="image" src="../assets/images/Ship2.png" alt="doubledeck">
+						<input class="ship" type="image" src="../assets/images/Ship2.png" alt="doubledeck">
+						<input class="ship" type="image" src="../assets/images/Ship2.png" alt="doubledeck">
+					</li>
+					<li>
+						<input class="ship" type="image" src="../assets/images/Ship1.png" alt="submarine">
+						<input class="ship" type="image" src="../assets/images/Ship1.png" alt="submarine">
+						<input class="ship" type="image" src="../assets/images/Ship1.png" alt="submarine">
+						<input class="ship" type="image" src="../assets/images/Ship1.png" alt="submarine">
+					</li>
+				</ul>
+
 			</ul>
 		</div>
 
 
+
+
 	</main>
 
-
+	<script src="../scripts/show_ships.js"></script>
 </body>
 
 </html>

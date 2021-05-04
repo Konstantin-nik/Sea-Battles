@@ -10,13 +10,13 @@ const multiButton = document.getElementById('multi');
 const backSettings = document.getElementById('back-settings');
 const backMultiplayer = document.getElementById('back-multiplayer');
 
-settingsButton[0].addEventListener('click',() => openNextPage(openedPage,page2));
-multiButton.addEventListener('click',()=>openNextPage(page1,page3));
-backSettings.addEventListener('click',() => openNextPage(openedPage,page1));
-backMultiplayer.addEventListener('click',() => openNextPage(openedPage,page1));
+settingsButton[0].addEventListener('click', () => openNextPage(openedPage, page2));
+multiButton.addEventListener('click', () => openNextPage(page1, page3));
+backSettings.addEventListener('click', () => openNextPage(openedPage, page1));
+backMultiplayer.addEventListener('click', () => openNextPage(openedPage, page1));
 
-function openNextPage(prev, next){
-    prev.style.display = 'none';
-    next.style.display = 'flex';
+function openNextPage(prev, next) {
+	prev.style.display = 'none';
+	next.style.display = 'flex';
 	openedPage = next;
 }
