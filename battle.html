@@ -8,7 +8,7 @@
 	<title>Battle</title>
 </head>
 
-<body id="id">
+<body>
 	<header>
 		<h1 class="header__text__h1">Placement of Ships</h1>
 	</header>
@@ -19,6 +19,7 @@
 		</script>
 		<div class="battlefield">
 			<img src="../assets/images/field_sea.png" alt="field_sea">
+		<div class="plc_bot">
 			<ul>
 				<li>
 					<button type="button" class="pressed-button"><b>Random</b></button>
@@ -26,28 +27,21 @@
 				<li>
 					<button id="loadShips" type="button" class="pressed-button"><b>By your self</b></button>
 				</li>
-				<ul id="ships">
-					<li>
-						<input class="ship" id="ship4" type="image" src="../assets/images/Ship4.png" alt="fourdeck" >
-					</li>
-					<li>
-						<input class="ship" id="ship3_1" type="image" src="../assets/images/Ship3.png" alt="tripledeck">
-						<input class="ship" id="ship3_2" type="image" src="../assets/images/Ship3.png" alt="tripledeck">
-					</li>
-					<li>
-						<input class="ship" id="ship2_1" type="image" src="../assets/images/Ship2.png" alt="doubledeck">
-						<input class="ship" id="ship2_2" type="image" src="../assets/images/Ship2.png" alt="doubledeck">
-						<input class="ship" id="ship2_3" type="image" src="../assets/images/Ship2.png" alt="doubledeck">
-					</li>
-					<li>
-						<input class="ship" id="ship1_1" type="image" src="../assets/images/Ship1.png" alt="submarine">
-						<input class="ship" id="ship1_2" type="image" src="../assets/images/Ship1.png" alt="submarine">
-						<input class="ship" id="ship1_3" type="image" src="../assets/images/Ship1.png" alt="submarine">
-						<input class="ship" id="ship1_4" type="image" src="../assets/images/Ship1.png" alt="submarine">
-					</li>
-				</ul>
 
 			</ul>
+			<div id="to_move" class="container">
+					<img class="ship" id="ship4" src="../assets/images/Ship4.png" alt="fourdeck" >
+					<img class="ship" id="ship3_1" src="../assets/images/Ship3.png" alt="tripledeck">
+					<img class="ship" id="ship3_2" src="../assets/images/Ship3.png" alt="tripledeck">
+					<img class="ship" id="ship2_1" src="../assets/images/Ship2.png" alt="doubledeck">
+					<img class="ship" id="ship2_2" src="../assets/images/Ship2.png" alt="doubledeck">
+					<img class="ship" id="ship2_3" src="../assets/images/Ship2.png" alt="doubledeck">
+					<img class="ship" id="ship1_1" src="../assets/images/Ship1.png" alt="submarine">
+					<img class="ship" id="ship1_2" src="../assets/images/Ship1.png" alt="submarine">
+					<img class="ship" id="ship1_3" src="../assets/images/Ship1.png" alt="submarine">
+					<img class="ship" id="ship1_4" src="../assets/images/Ship1.png" alt="submarine">
+			</div>
+		</div>
 		</div>
 
 

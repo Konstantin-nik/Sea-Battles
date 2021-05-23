@@ -1,20 +1,18 @@
 const loadShips = document.getElementById('loadShips');
 const ships = document.getElementById('ships');
 
-loadShips.addEventListener('click', () => showShips(ships));
+loadShips.addEventListener('click', () => showShips(to_move));
 
 function showShips(ship) {
 	ship.style.display = 'block';
 }
-
-
 
 var dragObject;
 var move = document.getElementById('to_move');
 var shiftX;
 var shiftY;
 
-document.onmousedown = function(e) {
+move.onmousedown = function(e) {
     for(n of move.children) {
         if(n.id == e.target.id) {
             dragObject = e.target;
@@ -26,26 +24,19 @@ document.onmousedown = function(e) {
             };
 
             dragObject.onmouseup = function(e) {
+				dragObject.style.zIndex = 900;
                 dragObject = null;
             };
 
-                function moveAt(e) {
+            function moveAt(e) {
                 dragObject.style.position = 'absolute';
-                document.getElementById("debug").innerHTML = shiftX + ':' + shiftY;
-                document.getElementById("debug2").innerHTML = dragObject.id;
+				dragObject.style.zIndex = 1000;
                 dragObject.style.left = e.pageX - shiftX + 'px';
                 dragObject.style.top = e.pageY - shiftY + 'px';
                 return;
             };
         }
     }
-}
-
-function myFunc() {
-    var x = document.getElementsByClassName("hhh");
-      x[1].style.display = "none";
-      x[0].style.display = "none";
-    
 }
 
 function getCoords(elem) {
