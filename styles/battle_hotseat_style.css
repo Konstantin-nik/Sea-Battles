@@ -1,0 +1,54 @@
+@font-face {
+	font-family: Redressed;
+	src: url("../assets/fonts/Redressed-Regular.ttf");
+}
+
+html {
+	font-family: Redressed;
+	background: url("../assets/images/background2.png");
+	background-size: 100%;
+}
+
+* {
+	margin: 0 0 0 0;
+}
+
+.header-img {
+	outline: none;
+	position: absolute;
+	right: 1%;
+	top: 2%;
+	display:flex;
+}
+
+.header-img input {
+	height: 80px;
+	margin-left: 3%;
+	width: auto;
+}
+
+.header-h1 {
+	font-size: 120px;
+	margin-top: 5%;
+	text-align: center;
+	color: #2e2761;
+}
+
+.battlefield {
+	margin-top: 1%;
+	display: flex;
+	justify-content: center;
+}
+
+#sea_background {
+	width: 500px;
+	height: auto;
+}
+#field {
+	width: 380px;
+	height: auto;
+}
+.centralize {
+	display: flex;
+	justify-content: space-evenly;
+}
