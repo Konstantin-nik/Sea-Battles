@@ -6,6 +6,7 @@ var field = document.getElementById('field');
 window.onresize = function() {
 	toPosition();
 	setFieldsPos();
+	//setTilesPosition();
 }
 
 
@@ -28,7 +29,8 @@ move.onmousedown = function(e) {
 	        shiftY = e.pageY - getCoords(dragObject).top;
 
             document.onmousemove = function(e) {
-                moveAt(e);
+				if(dragObject != null)
+                	moveAt(e);
             };
 
             dragObject.onmouseup = function(e) {
@@ -44,9 +46,14 @@ move.onmousedown = function(e) {
                 dragObject.style.top = e.pageY - shiftY + 'px';
                 return;
             };
-        }
+
+			function placeShip(e) {
+				
+        	};
+		}
     }
 }
+
 
 function getCoords(elem) {
 	let box = elem.getBoundingClientRect();
@@ -78,20 +85,72 @@ function toPosition() {
 
 }
 
+var field1;
 function setFieldsPos() {
-	field.position = 'absolute';
-	shiftX= (getCoords(field_back).right - getCoords(field_back).left)/2-(getCoords(field).right - getCoords(field).left)/2;
-	shiftY= (getCoords(field_back).bottom - getCoords(field_back).top)/2-(getCoords(field).bottom - getCoords(field).top)/2;
-	alert(shiftX + ':' + shiftY);
-	field.style.left = getCoords(field_back).left + shiftX + 'px';
-	alert(getCoords(field_back).left);
-	field.style.top = getCoords(field_back).top + shiftY  + 'px';
-	alert(getCoords(field_back).top);
+	field1 = battlefield1.children[1];
+	field1.style.position = 'absolute';
+	center_backX = (getCoords(battlefield1.children[0]).right + getCoords(battlefield1.children[0]).left) / 2;
+	center_backY = (getCoords(battlefield1.children[0]).top + getCoords(battlefield1.children[0]).bottom) / 2;
+	field1.style.left = center_backX - field1.width / 2 + 'px';
+	field1.style.top = center_backY - field1.width / 2 + 2 + 'px';
 }
+
+function matrixArray(rows,columns) {
+	var arr = new Array();
+	for(var i=0; i<rows; i++) {
+	  	arr[i] = new Array();
+	  	for(var j=0; j<columns; j++) {
+			arr[i][j] = i+j+1;//вместо i+j+1 пишем любой наполнитель. В простейшем случае - null
+		}
+	}
+	return arr;
+}
+
+var matrix1 = matrixArray(10,10);
+
+var tag;
+function newCell(x, y, z) {
+	tag = document.createElement('div');
+	tag.id="cells";
+	tag.innerHTML = '<img class="cell" src="../assets/images/shipDown/1.png"/>';
+
+	tag.children[0].style.left = x + "px";
+	tag.children[0].style.top= y + "px";
+	tag.children[0].style.zIndex= z + "px";
+	/*
+	style.position="absolute";
+	tag.style.left=x+"px";
+	tag.style.top=y+"px";
+	tag.style.zIndex=z + "px";
+	tag.style.src="../assets/images/shipDown/1.png";
+	tag.style.height= "40px";
+	tag.style.width = "40px";
+	*/
+	document.body.append(tag);
+	return tag;
+}
+
+var xc;
+var yc;
+var k = 40;
+function createTiles() {
+	matrix1.
+	xc = getCoords(field).left;
+	yc = getCoords(field).top;
+	for(let i = 0; i < 10; i++) {
+		for(let j = 0; j < 10; j++) {
+			matrix1[i][j] = newCell(xc + k*i, yc + k*j, -10);
+		}
+	}
+}
+
 
 document.ondragstart = function() {
 	return false;
 }
-
-toPosition();
-setFieldsPos();
+document.body.onload = function() {
+	toPosition();
+	setFieldsPos();
+	//createTiles();
+};
+//createTiles();

@@ -99,13 +99,20 @@ html {
 	width: auto;
 }
 .container img {
-	height: 32px;
+	position: absolute;
+	height: 40px;
 	width: auto;
 }
 
 #field {
 	position: absolute;
-	height: 320px;
+	height: 400px;
 	width: auto;
+}
+
+.cell {
+	position: absolute; 
+	height: 40px;
+	width: 40px;
 }
 
