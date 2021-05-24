@@ -36,6 +36,7 @@ move.onmousedown = function(e) {
             dragObject.onmouseup = function(e) {
 				dragObject.style.zIndex = 900;
 				//dragObject.style.position = 'relative';
+				placeShip(e);
                 dragObject = null;
             };
 
@@ -46,9 +47,43 @@ move.onmousedown = function(e) {
                 dragObject.style.top = e.pageY - shiftY + 'px';
                 return;
             };
-
+			var p_correct;
 			function placeShip(e) {
-				
+				if(dragObject.className == 'ship4') {
+					p_correct = 3;
+				}
+				else if(dragObject.className == 'ship3') {
+					p_correct = 2;
+				}
+				else if(dragObject.className == 'ship2') {
+					p_correct = 1;
+				}
+				else {
+					p_correct = 0;
+				}
+				if((e.pageX > getCoords(field).left) && (e.pageY > getCoords(field).top)) {
+					if(getCoords(dragObject).left < getCoords(field).left) {
+						if(getCoords(dragObject).top < getCoords(field).top) {
+							dragObject.style.left = getCoords(field).left + 2 + 'px';
+							dragObject.style.top = getCoords(field).top + 2 + 'px';
+						}
+						else if(getCoords(dragObject).top < getCoords(field).bottom-5) {
+							dragObject.style.left = getCoords(field).left + 2 + 'px';
+							dragObject.style.top = getCoords(field).top + k*Math.floor((e.pageY - getCoords(field).top)/k) + 2 + 'px';
+						}
+					}
+					else if(getCoords(dragObject).left < getCoords(field).right-5 - 40*p_correct) {
+						if(getCoords(dragObject).top < getCoords(field).top) {
+							dragObject.style.left = getCoords(field).left + k*Math.floor((getCoords(dragObject).left - getCoords(field).left)/k) + 2 + 'px';
+							dragObject.style.top = getCoords(field).top + 2 + 'px';
+						}
+						else if(getCoords(dragObject).top < getCoords(field).bottom-5) {
+							dragObject.style.left = getCoords(field).left + k*Math.floor((getCoords(dragObject).left - getCoords(field).left)/k) + 2 + 'px';
+							dragObject.style.top = getCoords(field).top + k*Math.floor((e.pageY - getCoords(field).top)/k) + 2 + 'px';
+						}
+
+					}
+				}
         	};
 		}
     }
@@ -144,13 +179,20 @@ function createTiles() {
 	}
 }
 
+function rotateShip(obj) {
+	obj.style.transform = 'rotate(-90deg)';
+}
+
 
 document.ondragstart = function() {
 	return false;
 }
+
 document.body.onload = function() {
 	toPosition();
 	setFieldsPos();
 	//createTiles();
 };
 //createTiles();
+
+
