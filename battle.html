@@ -8,7 +8,8 @@
 	<title>Battle</title>
 </head>
 
-<body>
+<body onload="toPosition()">
+	
 	<header>
 		<h1 class="header__text__h1">Placement of Ships</h1>
 	</header>
@@ -18,14 +19,15 @@
 			//document.getElementById("debug").innerHTML = "New text!";
 		</script>
 		<div class="battlefield">
-			<img src="../assets/images/field_sea.png" alt="field_sea">
+			<img id="sea_backgroung"src="../assets/images/field_sea_background.png" alt="field_sea">
+			<img id="field" src="../assets/images/field_sea.png" alt="field_sea">
 		<div class="plc_bot">
 			<ul>
 				<li>
 					<button type="button" class="pressed-button"><b>Random</b></button>
 				</li>
 				<li>
-					<button id="loadShips" type="button" class="pressed-button"><b>By your self</b></button>
+					<button id="loadShips" type="button" class="pressed-button" onclick="toPosition()"><b>Clear</b></button>
 				</li>
 
 			</ul>
@@ -40,6 +42,8 @@
 					<img class="ship" id="ship1_2" src="../assets/images/Ship1.png" alt="submarine">
 					<img class="ship" id="ship1_3" src="../assets/images/Ship1.png" alt="submarine">
 					<img class="ship" id="ship1_4" src="../assets/images/Ship1.png" alt="submarine">
+					
+				
 			</div>
 		</div>
 		</div>

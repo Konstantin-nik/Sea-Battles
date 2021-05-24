@@ -76,8 +76,12 @@ html {
 	color: #000080;
 }
 /* ///////////////////////////////////// */
-#to_move {
-	display: none;
+/*#to_move {
+	//display: none;
+}*/
+
+.ship {
+	position: absolute;
 }
 
 #container {
