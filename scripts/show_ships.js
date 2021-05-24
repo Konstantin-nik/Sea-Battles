@@ -1,8 +1,13 @@
 const loadShips = document.getElementById('loadShips');
 const ships = document.getElementById('ships');
+var field_back = document.getElementById('sea_background');
+var field = document.getElementById('field');
+
 window.onresize = function() {
 	toPosition();
+	setFieldsPos();
 }
+
 
 loadShips.addEventListener('click', () => showShips(to_move));
 
@@ -73,8 +78,20 @@ function toPosition() {
 
 }
 
+function setFieldsPos() {
+	field.position = 'absolute';
+	shiftX= (getCoords(field_back).right - getCoords(field_back).left)/2-(getCoords(field).right - getCoords(field).left)/2;
+	shiftY= (getCoords(field_back).bottom - getCoords(field_back).top)/2-(getCoords(field).bottom - getCoords(field).top)/2;
+	alert(shiftX + ':' + shiftY);
+	field.style.left = getCoords(field_back).left + shiftX + 'px';
+	alert(getCoords(field_back).left);
+	field.style.top = getCoords(field_back).top + shiftY  + 'px';
+	alert(getCoords(field_back).top);
+}
+
 document.ondragstart = function() {
 	return false;
 }
 
 toPosition();
+setFieldsPos();
